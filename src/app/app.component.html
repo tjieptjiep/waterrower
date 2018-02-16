@@ -1,0 +1,47 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+   Rowing data...
+  </h1>
+</div>
+
+<div class="col-md-6" style="width:1000px;" >
+  <div style="display: block;">
+    <canvas baseChart width="800" height="150"
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>
+</div>
+
+<div class="col-md-6" style="width:1000px;" >
+  <div style="display: block;">
+    <canvas baseChart width="800" height="150"
+            [datasets]="watt_lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>
+</div>
+
+
+<div *ngFor="let row of rowdata" style="width:800px;display:flex;">
+  <div style="width:300px;">{{ row.day }}</div>
+  <div style="width:100px">{{ row.time }}</div>
+  <div style="width:100px;">{{ row.watt }}</div>
+  <div style="width:100px;">{{ row.stroke_rate }}</div>
+  <div style="width:100px;">{{ row.distance }}</div>
+  <div style="width:100px;">{{ calc_distance }}</div>
+  <div style="width:100px;">{{ row.total_distance }}</div>
+</div>
+
+
